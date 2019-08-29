@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="InventarioApi201908" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Mike\\source\\repos\\InventarioApi\\InventarioApi\\obj\\Release\\netcoreapp2\.2\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="InventarioApi.Contexts.ApplicationDbContext" description="" value="Data Source=tcp:inventarioapiserver.database.windows.net,1433;Initial Catalog=InventarioApi201908_db;User Id=inventarioapiadmin@inventarioapiserver;Password=InventarioApi2019" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\Mike\\source\\repos\\InventarioApi\\InventarioApi\\obj\\Release\\netcoreapp2\.2\\PubTmp\\EFSQLScripts\\InventarioApi\.Contexts\.ApplicationDbContext\.sql$" />
+  </parameter>
+</parameters>

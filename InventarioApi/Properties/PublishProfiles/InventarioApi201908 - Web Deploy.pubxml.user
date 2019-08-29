@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGgv/TEgRxEy5TI/+uz/J2QAAAAACAAAAAAAQZgAAAAEAACAAAACsGLVoCWV77a1m+Tcf2DZVbFFn0ZY9e/T19W8sV3RrBAAAAAAOgAAAAAIAACAAAABEB880vLKuciskYkd52wD47nGh32uJaIPx5R5r8AWf8IAAAABZ0CLnivdw4Eeu/Qb2hTUgj1a/XDV8Mh1SvNhISDvZcX69Zf4ZAvuJZuy7/V1ZFiOASwj3zzqVPcKHvKZzNG5ZrbrEjwUhT/q8kb4LERXu/a62KoB03xp2ZtggLVI8n3ebfh27FL6DvDkNUJgeDCwjFQhBJLZlx2SKU/UTa9b04EAAAAAaH5NsBQBZZ+bVUm3sS/LNIOSDSJ05nME5rRmqEgCejn+G3IdUDR+OzKj39NgylX8fbsyi6pnNuF6bfrddQ98w</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <EFMigrations Include="InventarioApi.Contexts.ApplicationDbContext">
+      <Value>Data Source=tcp:inventarioapiserver.database.windows.net,1433%3bInitial Catalog=InventarioApi201908_db%3bUser Id=inventarioapiadmin%40inventarioapiserver%3bPassword=InventarioApi2019</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

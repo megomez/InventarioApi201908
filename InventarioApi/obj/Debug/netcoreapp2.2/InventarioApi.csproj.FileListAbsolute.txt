@@ -1,0 +1,16 @@
+C:\Users\Mike\source\repos\InventarioApi\InventarioApi\bin\Debug\netcoreapp2.2\InventarioApi.deps.json
+C:\Users\Mike\source\repos\InventarioApi\InventarioApi\bin\Debug\netcoreapp2.2\InventarioApi.runtimeconfig.json
+C:\Users\Mike\source\repos\InventarioApi\InventarioApi\bin\Debug\netcoreapp2.2\InventarioApi.runtimeconfig.dev.json
+C:\Users\Mike\source\repos\InventarioApi\InventarioApi\bin\Debug\netcoreapp2.2\InventarioApi.dll
+C:\Users\Mike\source\repos\InventarioApi\InventarioApi\bin\Debug\netcoreapp2.2\InventarioApi.pdb
+C:\Users\Mike\source\repos\InventarioApi\InventarioApi\obj\Debug\netcoreapp2.2\InventarioApi.csproj.CoreCompileInputs.cache
+C:\Users\Mike\source\repos\InventarioApi\InventarioApi\obj\Debug\netcoreapp2.2\InventarioApi.RazorAssemblyInfo.cache
+C:\Users\Mike\source\repos\InventarioApi\InventarioApi\obj\Debug\netcoreapp2.2\InventarioApi.RazorAssemblyInfo.cs
+C:\Users\Mike\source\repos\InventarioApi\InventarioApi\obj\Debug\netcoreapp2.2\InventarioApi.AssemblyInfoInputs.cache
+C:\Users\Mike\source\repos\InventarioApi\InventarioApi\obj\Debug\netcoreapp2.2\InventarioApi.AssemblyInfo.cs
+C:\Users\Mike\source\repos\InventarioApi\InventarioApi\obj\Debug\netcoreapp2.2\InventarioApi.RazorTargetAssemblyInfo.cache
+C:\Users\Mike\source\repos\InventarioApi\InventarioApi\obj\Debug\netcoreapp2.2\InventarioApi.dll
+C:\Users\Mike\source\repos\InventarioApi\InventarioApi\obj\Debug\netcoreapp2.2\InventarioApi.pdb
+C:\Users\Mike\source\repos\InventarioApi\InventarioApi\bin\Debug\netcoreapp2.2\InventarioApi.xml
+C:\Users\Mike\source\repos\InventarioApi\InventarioApi\obj\Debug\netcoreapp2.2\InventarioApi.csprojAssemblyReference.cache
+C:\Users\Mike\source\repos\InventarioApi\InventarioApi\obj\Debug\netcoreapp2.2\InventarioApi.xml

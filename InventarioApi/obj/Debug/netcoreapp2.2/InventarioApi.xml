@@ -1,0 +1,788 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InventarioApi</name>
+    </assembly>
+    <members>
+        <member name="P:InventarioApi.Contexts.ApplicationDbContext.Areas">
+            <summary>
+            Áreas de la empresa
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Contexts.ApplicationDbContext.Telementos">
+            <summary>
+            Tipos de elementos que tiene la empresa
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Contexts.ApplicationDbContext.Tdocumentos">
+            <summary>
+            Tipo de documento de las personas
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Contexts.ApplicationDbContext.Personas">
+            <summary>
+            Personas registradas en la empresa
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Contexts.ApplicationDbContext.Elementos">
+            <summary>
+            Inventario de elementos que hay en la empresa
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Contexts.ApplicationDbContext.PersonaElementos">
+            <summary>
+            Elementos asignados a cada una de las personas
+            </summary>
+        </member>
+        <member name="M:InventarioApi.Controllers.AreasController.GetAreas">
+            <summary>
+            GET: api/areas
+            Obtiene las áreas registradas
+            </summary>
+            <returns>Listado de áreas</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.AreasController.GetArea(System.Int64)">
+            <summary>
+            GET: api/areas/{id}
+            Obtiene una área específica por id
+            </summary>
+            <param name="id">Nombre del área buscada</param>
+            <returns>Área correspondiente al Id</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.AreasController.PutArea(System.Int64,InventarioApi.Models.AreaVM)">
+            <summary>
+            PUT: api/areas/{id}
+            Actualiza los datos del área
+            </summary>
+            <param name="id">Id del área que se va a actualizar</param>
+            <param name="areaVM">Datos de la actualización</param>
+            <returns>Resultado de la actualización</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.AreasController.PostArea(InventarioApi.Models.AreaVM)">
+            <summary>
+            POST: api/areas
+            Ingresa una nueva área al sistema
+            </summary>
+            <param name="areaVM">Datos del área que se ingresa</param>
+            <returns>Resultado de la inserción</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.AreasController.DeleteArea(System.Int64)">
+            <summary>
+            DELETE: api/Areas/{id}
+            Elimina un área del sistema
+            </summary>
+            <param name="id">Id del área que se va a eliminar</param>
+            <returns>Resultado de la eliminación</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.AreasController.AreaExists(System.Int64)">
+            <summary>
+            Método privado
+            Comprueba si el área consultada existe
+            </summary>
+            <param name="id">Id del área consultada</param>
+            <returns>Existe o no existe</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.ElementosController.GetElementos">
+            <summary>
+            GET: api/personas
+            Trae el listado de elementos que hay en el sistema
+            </summary>
+            <returns>Listado total de elementos</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.ElementosController.GetElemento(System.Int64)">
+            <summary>
+            GET: api/elementos/{id}
+            Obtiene los datos de un elemento específico
+            </summary>
+            <param name="id">Id del elemento buscado</param>
+            <returns>Los datos del elemento buscado</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.ElementosController.PutElemento(System.Int64,InventarioApi.Models.ElementoVM)">
+            <summary>
+            PUT: api/elementos/{id}
+            Ejecuta la actualización de los datos de un elemento
+            </summary>
+            <param name="id">Id del elemento que se va a actualizar</param>
+            <param name="elementoVM">Datos del elemento que se va a actualizar</param>
+            <returns>Respuesta 204 NoContent</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.ElementosController.PostElemento(InventarioApi.Models.ElementoVM)">
+            <summary>
+            POST: api/elementos
+            Inserta elemento en la base de datos
+            </summary>
+            <param name="elementoVM">Datos del elemento que se ingresa</param>
+            <returns>Resultado de la inserción</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.ElementosController.DeleteElemento(System.Int64)">
+            <summary>
+            DELETE: api/elementos/{id}
+            Elimina un elemento de la base de datos
+            </summary>
+            <param name="id">Id del elemento que se elimina</param>
+            <returns>Respuesta 204 NoContent</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.ElementosController.ElementoExists(System.Int64)">
+            <summary>
+            Método privado
+            Comprueba si el elemento existe
+            </summary>
+            <param name="id">Id del elemento buscado</param>
+            <returns>Respuesta si existe o no el elemento</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.PersonaElementosController.GetPersonaElementos">
+            <summary>
+            GET: api/personaelementos
+            Trae el listado de elementos que estan asignados a las personas
+            </summary>
+            <returns>Listado total de elementos asignados a personas</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.PersonaElementosController.GetPersonaElemento(System.Int64)">
+            <summary>
+            GET: api/personaelementos/{id}
+            Obtiene los datos de un elemento específico
+            </summary>
+            <param name="id">Id del elemento buscado</param>
+            <returns>Los datos del elemento buscado</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.PersonaElementosController.PutPersonaElemento(System.Int64,InventarioApi.Models.PersonaElementoVM)">
+            <summary>
+            PUT: api/personaelementos/{id}
+            Ejecuta la actualización de los datos de un elemento asignado a una persona
+            </summary>
+            <param name="id">Id del elemento que se va a actualizar</param>
+            <param name="personaElementoVM">Datos del elemento que se va a actualizar</param>
+            <returns>Respuesta 204 NoContent</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.PersonaElementosController.PostPersonaElemento(InventarioApi.Models.PersonaElementoVM)">
+            <summary>
+            POST: api/personaelementos
+            Inserta un elemento asignado a una persona en la base de datos
+            </summary>
+            <param name="personaElementoVM">Datos del elemento que se ingresa</param>
+            <returns>Resultado de la inserción</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.PersonaElementosController.DeletePersonaElemento(System.Int64)">
+            <summary>
+            DELETE: api/personaelementos/{id}
+            Elimina un elemento asignado a una persona de la base de datos
+            </summary>
+            <param name="id">Id del elemento asignado a una persona que se elimina</param>
+            <returns>Respuesta 204 NoContent</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.PersonaElementosController.PersonaElementoExists(System.Int64)">
+            <summary>
+            Método privado
+            Comprueba si el registro existe
+            </summary>
+            <param name="id">Id del registro buscado</param>
+            <returns>Respuesta si existe o no el registro</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.PersonasController.GetPersonas">
+            <summary>
+            GET: api/personas
+            Trae el listado de personas que hay en el sistema
+            </summary>
+            <returns>Listado total de personas</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.PersonasController.GetPersona(System.Int64)">
+            <summary>
+            GET: api/Personas/{id}
+            Obtiene los datos de una persona específica
+            </summary>
+            <param name="id">Id de la persona buscada</param>
+            <returns>Los datos de la persona buscada</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.PersonasController.PutPersona(System.Int64,InventarioApi.Models.PersonaVM)">
+            <summary>
+            PUT: api/personas/{id}
+            Ejecuta la actualización de los datos de una persona
+            </summary>
+            <param name="id">Id de la persona que se va a actualizar</param>
+            <param name="personaVM">Datos de la persona que se va a actualizar</param>
+            <returns>Respuesta 204 NoContent</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.PersonasController.PostPersona(InventarioApi.Models.PersonaVM)">
+            <summary>
+            POST: api/Personas
+            Inserta persona en la base de datos
+            </summary>
+            <param name="personaIngreso">Datos de la persona que se ingresa</param>
+            <returns>Resultado de la inserción</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.PersonasController.DeletePersona(System.Int64)">
+            <summary>
+            DELETE: api/personas/{id}
+            Elimina una persona de la base de datos
+            </summary>
+            <param name="id">Id de la persona que se elimina</param>
+            <returns>Respuesta 204 NoContent</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.PersonasController.PersonaExists(System.Int64)">
+            <summary>
+            Método privado
+            Comprueba si la persona existe
+            </summary>
+            <param name="id">Id de la persona buscada</param>
+            <returns>Respuesta si existe o no la persona</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.TdocumentosController.GetTdocuemntos">
+            <summary>
+            GET: api/tdocumentos
+            Trae el listado de tipos de documentos
+            </summary>
+            <returns>Listado de tipos de documentos</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.TdocumentosController.GetTdocumento(System.Int64)">
+            <summary>
+            GET: api/tdocumentos/{id}
+            Trae los datos de un tipo de documento específico
+            </summary>
+            <param name="id">Id del tipo de documento buscado</param>
+            <returns>Datos del documento buscado</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.TdocumentosController.PutTdocumento(System.Int64,InventarioApi.Models.TdocumentoVM)">
+            <summary>
+            PUT: api/tdocumentos/{id}
+            Actualiza los datos de un tipo de documento
+            </summary>
+            <param name="id">Id del tipo de documento</param>
+            <param name="tdocumento">Datos que se van a actualizar</param>
+            <returns>Respuesta 204 NoContent</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.TdocumentosController.PostTdocumento(InventarioApi.Models.TdocumentoVM)">
+            <summary>
+            POST: api/tdocumentos
+            Ingresa un nuevo tipo de documento al sistema
+            </summary>
+            <param name="tdocumentoVM">Datos del nuevo tipo de documento</param>
+            <returns>Resultado de la inserción</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.TdocumentosController.DeleteTdocumento(System.Int64)">
+            <summary>
+            DELETE: api/tdocumentos/{id}
+            Elimina un tipo de documento
+            </summary>
+            <param name="id">Id del tipo de documento que se va a eliminar</param>
+            <returns>Respuesta 204 NoContent</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.TdocumentosController.TdocumentoExists(System.Int64)">
+            <summary>
+            Método privado
+            Comprueba si el tipo de documento consultado existe
+            </summary>
+            <param name="id">Id del tipo de documento consultado</param>
+            <returns>Existe o no existe</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.TelementosController.GetTelementos">
+            <summary>
+            GET: api/telementos
+            Trae el listado de tipos de elementos
+            </summary>
+            <returns>Listado de tipos de elementos</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.TelementosController.GetTelemento(System.Int64)">
+            <summary>
+            GET: api/telementos/{id}
+            Trae los datos de un tipo de elemento específico
+            </summary>
+            <param name="id">Id del tipo de elemento buscado</param>
+            <returns>Datos del elemento buscado</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.TelementosController.PutTelemento(System.Int64,InventarioApi.Models.TelementoVM)">
+            <summary>
+            PUT: api/telementos/{id}
+            Actualiza los datos de un tipo de elemento
+            </summary>
+            <param name="id">Id del tipo de elemento</param>
+            <param name="telementoVM">Datos que se van a actualizar</param>
+            <returns>Respuesta 204 NoContent</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.TelementosController.PostTelemento(InventarioApi.Models.TelementoVM)">
+            <summary>
+            POST: api/telementos
+            Ingresa un nuevo tipo de elemento al sistema
+            </summary>
+            <param name="telementoVM">Datos del nuevo tipo de elemento</param>
+            <returns>Resultado de la inserción</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.TelementosController.DeleteTelemento(System.Int64)">
+            <summary>
+            DELETE: api/telementos/{id}
+            Elimina un tipo de elemento
+            </summary>
+            <param name="id">Id del tipo de elemento que se va a eliminar</param>
+            <returns>Respuesta 204 NoContent</returns>
+        </member>
+        <member name="M:InventarioApi.Controllers.TelementosController.TelementoExists(System.Int64)">
+            <summary>
+            Método privado
+            Comprueba si el tipo de elemento consultado existe
+            </summary>
+            <param name="id">Id del tipo de elemento consultado</param>
+            <returns>Existe o no existe</returns>
+        </member>
+        <member name="T:InventarioApi.Entities.Area">
+            <summary>
+            Áreas de la empresa
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Area.Id">
+            <summary>
+            Id del área en la base de datos
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Area.Nombre">
+            <summary>
+            Nombre del area
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Area.Personas">
+            <summary>
+            Listado de personas que tiene el área
+            </summary>
+        </member>
+        <member name="T:InventarioApi.Entities.Elemento">
+            <summary>
+            Elementos que hay en la empresa
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Elemento.Id">
+            <summary>
+            Id del inventario en la base de datos
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Elemento.Descripcion">
+            <summary>
+            Descripción del elemento en el inventario
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Elemento.Serial">
+            <summary>
+            Número de serie del elemento que hay en el inventario
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Elemento.ValorCompra">
+            <summary>
+            Valor monetario del elemento que está en el inventario
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Elemento.FechaCompra">
+            <summary>
+            Fecha de compra del elemento que está en el inventario
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Elemento.Estado">
+            <summary>
+            Estado del elemento
+            ('Sin asignar', 'Asignado', 'Dañado', 'Retirado')
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Elemento.TelementoId">
+            <summary>
+            Tipo de elemento
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Elemento.PersonaElementos">
+            <summary>
+            Listado de elementos asignados a las personas
+            </summary>
+        </member>
+        <member name="T:InventarioApi.Entities.Persona">
+            <summary>
+            Personas registradas en la empresa
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Persona.Id">
+            <summary>
+            Id de la persona en la base de datos
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Persona.Documento">
+            <summary>
+            Documento de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Persona.PrimerNombre">
+            <summary>
+            Primer nombre de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Persona.SegundoNombre">
+            <summary>
+            Segundo nombre de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Persona.PrimerApellido">
+            <summary>
+            Primer apellido de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Persona.SegundoApellido">
+            <summary>
+            Segundo apellido de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Persona.FechaNacimiento">
+            <summary>
+            Fecha de nacimiento de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Persona.Direccion">
+            <summary>
+            Dirección de residencia de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Persona.Telefono">
+            <summary>
+            Teléfono de contacto de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Persona.Email">
+            <summary>
+            Email de contacto de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Persona.TdocumentoId">
+            <summary>
+            Id del tipo de documento de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Persona.AreaId">
+            <summary>
+            Id del área donde está la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Persona.PersonaElementos">
+            <summary>
+            Listado de elementos que tiene la persona
+            </summary>
+        </member>
+        <member name="T:InventarioApi.Entities.PersonaElemento">
+            <summary>
+            Elementos asignados a cada una de las personas
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.PersonaElemento.Id">
+            <summary>
+            Id del registro del elemento asígnado a la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.PersonaElemento.ObservacionAsignacion">
+            <summary>
+            Observaciones de la asignación de un elemento a una persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.PersonaElemento.ObservacionRetiro">
+            <summary>
+            Observaciones del retiro de un elemento a una persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.PersonaElemento.FechaAsignacion">
+            <summary>
+            Fecha de asignación de un elemento a una persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.PersonaElemento.FechaRetiro">
+            <summary>
+            Fecha de retiro de un elemento a una persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.PersonaElemento.PersonaId">
+            <summary>
+            Id de la persona a la que se le asigna el elemento
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.PersonaElemento.ElementoId">
+            <summary>
+            Id del elemento que se le asigna a una persona
+            </summary>
+        </member>
+        <member name="T:InventarioApi.Entities.Tdocumento">
+            <summary>
+            Tipo de documento de las personas
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Tdocumento.Id">
+            <summary>
+            Id del tipo de documento en la base de datos
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Tdocumento.Nombre">
+            <summary>
+            Nombre del tipo de documento
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Tdocumento.Sigla">
+            <summary>
+            Sigla del tipo de documento
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Tdocumento.Personas">
+            <summary>
+            Listado de personas que tiene el tipo de documento
+            </summary>
+        </member>
+        <member name="T:InventarioApi.Entities.Telemento">
+            <summary>
+            Tipos de elementos que tiene la empresa
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Telemento.Id">
+            <summary>
+            Id del tipo de elemento en la base de datos
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Telemento.Nombre">
+            <summary>
+            Nombre del tipo de elemento
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Entities.Telemento.Elementos">
+            <summary>
+            Listado de elementos que tiene el tipo de elemento
+            </summary>
+        </member>
+        <member name="T:InventarioApi.Models.AreaVM">
+            <summary>
+            Modelo de las áreas de la empresa
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.AreaVM.Id">
+            <summary>
+            Id del área en la base de datos
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.AreaVM.Nombre">
+            <summary>
+            Nombre del area
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.AreaVM.Personas">
+            <summary>
+            Nombre del area
+            </summary>
+        </member>
+        <member name="T:InventarioApi.Models.ElementoVM">
+            <summary>
+            Elementos que hay en la empresa
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.ElementoVM.Id">
+            <summary>
+            Id del inventario en la base de datos
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.ElementoVM.Descripcion">
+            <summary>
+            Descripción del elemento en el inventario
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.ElementoVM.Serial">
+            <summary>
+            Número de serie del elemento que hay en el inventario
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.ElementoVM.ValorCompra">
+            <summary>
+            Valor monetario del elemento que está en el inventario
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.ElementoVM.FechaCompra">
+            <summary>
+            Fecha de compra del elemento que está en el inventario
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.ElementoVM.Estado">
+            <summary>
+            Estado del elemento
+            ('Sin asignar', 'Asignado', 'Dañado', 'Retirado')
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.ElementoVM.TelementoId">
+            <summary>
+            Id del Tipo de elemento
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.ElementoVM.Telemento">
+            <summary>
+            Tipo de elemento
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.ElementoVM.PersonaElementos">
+            <summary>
+            Personas a las que se ha asignado el elemento
+            </summary>
+        </member>
+        <member name="T:InventarioApi.Models.PersonaElementoVM">
+            <summary>
+            Elementos asignados a cada una de las personas
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaElementoVM.Id">
+            <summary>
+            Id del registro del elemento asígnado a la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaElementoVM.ObservacionAsignacion">
+            <summary>
+            Observaciones de la asignación de un elemento a una persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaElementoVM.ObservacionRetiro">
+            <summary>
+            Observaciones del retiro de un elemento a una persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaElementoVM.FechaAsignacion">
+            <summary>
+            Fecha de asignación de un elemento a una persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaElementoVM.FechaRetiro">
+            <summary>
+            Fecha de retiro de un elemento a una persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaElementoVM.PersonaId">
+            <summary>
+            Id de la persona a la que se le asigna el elemento
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaElementoVM.Persona">
+            <summary>
+            Nombre de la persona a la que se le asigna el elemento
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaElementoVM.ElementoId">
+            <summary>
+            Id del elemento que se le asigna a una persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaElementoVM.Elemento">
+            <summary>
+            Elemento que se le asigna a una persona
+            </summary>
+        </member>
+        <member name="T:InventarioApi.Models.PersonaVM">
+            <summary>
+            Modelo de las personas registradas en la empresa
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaVM.Id">
+            <summary>
+            Id de la persona en la base de datos
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaVM.Documento">
+            <summary>
+            Documento de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaVM.NombreCompleto">
+            <summary>
+            Nombre completo de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaVM.PrimerNombre">
+            <summary>
+            Primer nombre de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaVM.SegundoNombre">
+            <summary>
+            Segundo nombre de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaVM.PrimerApellido">
+            <summary>
+            Primer apellido de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaVM.SegundoApellido">
+            <summary>
+            Segundo apellido de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaVM.FechaNacimiento">
+            <summary>
+            Fecha de nacimiento de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaVM.Direccion">
+            <summary>
+            Dirección de residencia de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaVM.Telefono">
+            <summary>
+            Teléfono de contacto de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaVM.Email">
+            <summary>
+            Email de contacto de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaVM.TipoDocumento">
+            <summary>
+            Id del tipo de documento de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaVM.Area">
+            <summary>
+            Id del área donde está la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaVM.TdocumentoId">
+            <summary>
+            Id del tipo de documento de la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaVM.AreaId">
+            <summary>
+            Id del área donde está la persona
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.PersonaVM.PersonaElementos">
+            <summary>
+            Elementos que se le han asignado a la persona
+            </summary>
+        </member>
+        <member name="T:InventarioApi.Models.TdocumentoVM">
+            <summary>
+            Tipo de documento de las personas
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.TdocumentoVM.Id">
+            <summary>
+            Id del tipo de documento en la base de datos
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.TdocumentoVM.Nombre">
+            <summary>
+            Nombre del tipo de documento
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.TdocumentoVM.Sigla">
+            <summary>
+            Sigla del tipo de documento
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.TelementoVM.Id">
+            <summary>
+            Id del tipo de elemento en la base de datos
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.TelementoVM.Nombre">
+            <summary>
+            Nombre del tipo de elemento
+            </summary>
+        </member>
+        <member name="P:InventarioApi.Models.TelementoVM.Elementos">
+            <summary>
+            Listado de elementos
+            </summary>
+        </member>
+    </members>
+</doc>
