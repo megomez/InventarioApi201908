@@ -67,7 +67,7 @@ namespace InventarioApi.Controllers
         /// Actualiza los datos de un tipo de documento
         /// </summary>
         /// <param name="id">Id del tipo de documento</param>
-        /// <param name="tdocumento">Datos que se van a actualizar</param>
+        /// <param name="tdocumentoVM">Datos que se van a actualizar</param>
         /// <returns>Respuesta 204 NoContent</returns>
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTdocumento(long id, [FromBody] TdocumentoVM tdocumentoVM)

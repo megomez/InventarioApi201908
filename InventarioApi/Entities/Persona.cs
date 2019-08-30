@@ -32,7 +32,7 @@ namespace InventarioApi.Entities
         /// <summary>
         /// Segundo nombre de la persona
         /// </summary>
-        public string SegundoNombre { get; set; }
+        public string SegundoNombre { get; set; } = "";
 
         /// <summary>
         /// Primer apellido de la persona
@@ -43,7 +43,7 @@ namespace InventarioApi.Entities
         /// <summary>
         /// Segundo apellido de la persona
         /// </summary>
-        public string SegundoApellido { get; set; }
+        public string SegundoApellido { get; set; } = "";
 
         /// <summary>
         /// Fecha de nacimiento de la persona

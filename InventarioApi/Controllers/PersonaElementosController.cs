@@ -66,7 +66,7 @@ namespace InventarioApi.Controllers
         [HttpGet("{id}", Name = "ObtenerPersonaElemento")]
         public async Task<ActionResult<PersonaElementoVM>> GetPersonaElemento(long id)
         {
-            if (this.PersonaElementoExists(id))
+            if (!this.PersonaElementoExists(id))
             {
                 return NotFound();
             }

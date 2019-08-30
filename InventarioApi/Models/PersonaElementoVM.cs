@@ -33,7 +33,7 @@ namespace InventarioApi.Models
         /// <summary>
         /// Fecha de retiro de un elemento a una persona
         /// </summary>
-        public DateTime FechaRetiro { get; set; }
+        public DateTime? FechaRetiro { get; set; }
 
         /// <summary>
         /// Id de la persona a la que se le asigna el elemento

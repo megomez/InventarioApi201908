@@ -27,8 +27,8 @@ namespace InventarioApi.Mappings
             CreateMap<Persona, PersonaVM>();
             CreateMap<PersonaVM, Persona>();
 
-            CreateMap<PersonaElemento, PersonaElemento>();
-            CreateMap<PersonaElemento, PersonaElemento>();
+            CreateMap<PersonaElemento, PersonaElementoVM>();
+            CreateMap<PersonaElementoVM, PersonaElemento>();
         }
     }
 }

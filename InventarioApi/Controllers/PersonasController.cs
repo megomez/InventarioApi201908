@@ -42,10 +42,10 @@ namespace InventarioApi.Controllers
                         {
                             Id = p.Id,
                             Documento = p.Documento,
-                            NombreCompleto = p.PrimerNombre + " " + 
-                                     (p.SegundoNombre.Length == 0 ? "" : p.SegundoNombre + " ") +
-                                     p.PrimerApellido + " " +
-                                     (p.SegundoApellido.Length == 0 ? "" : p.SegundoApellido),
+                            NombreCompleto = p.PrimerNombre +
+                                     " " + (p.SegundoNombre.Equals("NONE") ? "" : p.SegundoNombre + " ") +
+                                     " " + p.PrimerApellido +
+                                     " " + (p.SegundoApellido.Equals("NONE") ? "" : p.SegundoApellido),
                             PrimerNombre = p.PrimerNombre,
                             SegundoNombre = p.SegundoNombre,
                             PrimerApellido = p.PrimerApellido,
@@ -107,10 +107,10 @@ namespace InventarioApi.Controllers
                         {
                             Id = p.Id,
                             Documento = p.Documento,
-                            NombreCompleto = p.PrimerNombre + " " +
-                                     (p.SegundoNombre.Length == 0 ? "" : p.SegundoNombre + " ") +
-                                     p.PrimerApellido + " " +
-                                     (p.SegundoApellido.Length == 0 ? "" : p.SegundoApellido),
+                            NombreCompleto = p.PrimerNombre +
+                                     (p.SegundoNombre.Equals("NONE") ? "" : " " + p.SegundoNombre) +
+                                     " " + p.PrimerApellido + 
+                                     (p.SegundoApellido.Equals("NONE") ? "" : " " + p.SegundoApellido),
                             PrimerNombre = p.PrimerNombre,
                             SegundoNombre = p.SegundoNombre,
                             PrimerApellido = p.PrimerApellido,

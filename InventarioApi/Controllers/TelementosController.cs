@@ -101,8 +101,8 @@ namespace InventarioApi.Controllers
         [HttpPost]
         public async Task<ActionResult<TelementoVM>> PostTelemento([FromBody] TelementoVM telementoVM)
         {
-            var telemento = mapper.Map<Tdocumento>(telementoVM);
-            context.Tdocumentos.Add(telemento);
+            var telemento = mapper.Map<Telemento>(telementoVM);
+            context.Telementos.Add(telemento);
             await context.SaveChangesAsync();
 
             telementoVM = mapper.Map<TelementoVM>(telemento);

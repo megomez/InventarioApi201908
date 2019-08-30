@@ -26,7 +26,6 @@ namespace InventarioApi.Models
         /// <summary>
         /// Nombre completo de la persona
         /// </summary>
-        [Required]
         public string NombreCompleto { get; set; }
 
         /// <summary>
